@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euclides - Sistema de Agendamento de Viagens</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-bus"></i>
+                <span>Euclides</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#viagens" class="nav-link">Viagens</a>
+                <a href="#reservas" class="nav-link">Minhas Reservas</a>
+                <a href="#agencias" class="nav-link">Agências</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Reserve de Casa</span>
+                <br>Pague Online, Viaje Tranquilo
+            </h1>
+            <p class="hero-subtitle">
+                Sistema completo de agendamento de viagens. Reserve sua passagem, 
+                pague online e receba seu ticket digital. Tudo sem sair de casa!
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="scrollToSection('viagens')">
+                    <i class="fas fa-search"></i>
+                    Buscar Viagens
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('reservas')">
+                    <i class="fas fa-ticket-alt"></i>
+                    Minhas Reservas
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="bus-animation">
+                <i class="fas fa-bus"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Por que escolher nossa plataforma?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Reserve de Casa</h3>
+                    <p>Não precisa sair de casa ou ir até a agência. Reserve sua viagem do conforto do seu lar.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Pagamento Online</h3>
+                    <p>Pague com cartão, transferência ou mobile money. Processo seguro e rápido.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Economia de Tempo</h3>
+                    <p>Evite filas e esperas. Todo o processo leva apenas alguns minutos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Ticket Digital</h3>
+                    <p>Receba seu ticket por email ou SMS. Sem necessidade de impressão.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança Total</h3>
+                    <p>Seus dados e pagamentos são protegidos com criptografia de ponta.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Nossa equipe está sempre disponível para ajudar com qualquer dúvida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="viagens" class="search-section">
+        <div class="container">
+            <h2 class="section-title">Encontre sua Viagem</h2>
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="origem">Origem</label>
+                    <select id="origem" class="form-control">
+                        <option value="">Selecione a origem</option>
+                        <option value="Luanda">Luanda</option>
+                        <option value="Benguela">Benguela</option>
+                        <option value="Lubango">Lubango</option>
+                        <option value="Huambo">Huambo</option>
+                        <option value="Cabinda">Cabinda</option>
+                        <option value="Soyo">Soyo</option>
+                        <option value="Malanje">Malanje</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino</label>
+                    <select id="destino" class="form-control">
+                        <option value="">Selecione o destino</option>
+                        <option value="Luanda">Luanda</option>
+                        <option value="Benguela">Benguela</option>
+                        <option value="Lubango">Lubango</option>
+                        <option value="Huambo">Huambo</option>
+                        <option value="Cabinda">Cabinda</option>
+                        <option value="Soyo">Soyo</option>
+                        <option value="Malanje">Malanje</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data da Viagem</label>
+                    <input type="date" id="data" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-search" onclick="buscarViagens()">
+                    <i class="fas fa-search"></i>
+                    Buscar Viagens
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Buscando viagens disponíveis...</p>
+            </div>
+            <div id="viagens-results" class="viagens-grid"></div>
+        </div>
+    </section>
+
+    <!-- Reservas Section -->
+    <section id="reservas" class="reservas-section">
+        <div class="container">
+            <h2 class="section-title">Minhas Reservas</h2>
+            <div class="reservas-form">
+                <div class="form-group">
+                    <label for="bi-consulta">Bilhete de Identidade</label>
+                    <input type="text" id="bi-consulta" class="form-control" placeholder="Digite seu BI">
+                </div>
+                <button class="btn btn-primary" onclick="consultarReservas()">
+                    <i class="fas fa-search"></i>
+                    Consultar Reservas
+                </button>
+            </div>
+            <div id="reservas-results" class="reservas-grid"></div>
+        </div>
+    </section>
+
+    <!-- Agências Section -->
+    <section id="agencias" class="agencias-section">
+        <div class="container">
+            <h2 class="section-title">Nossas Agências</h2>
+            <div id="agencias-grid" class="agencias-grid"></div>
+        </div>
+    </section>
+
+    <!-- Modal de Reserva -->
+    <div id="modal-reserva" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Fazer Reserva</h3>
+                <span class="close" onclick="fecharModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="form-reserva">
+                    <!-- Informações do Passageiro -->
+                    <div class="form-section">
+                        <h4><i class="fas fa-user"></i> Informações Pessoais</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" id="nome" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bi">Bilhete de Identidade</label>
+                                <input type="text" id="bi" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detalhes da Viagem -->
+                    <div class="form-section">
+                        <h4><i class="fas fa-bus"></i> Detalhes da Viagem</h4>
+                        <div class="viagem-summary" id="viagem-summary">
+                            <!-- Será preenchido via JavaScript -->
+                        </div>
+                        <div class="form-group">
+                            <label for="lugares">Número de Lugares</label>
+                            <input type="number" id="lugares" class="form-control" min="1" max="10" required onchange="calcularTotal()">
+                        </div>
+                    </div>
+
+                    <!-- Sistema de Pagamento -->
+                    <div class="form-section">
+                        <h4><i class="fas fa-credit-card"></i> Método de Pagamento</h4>
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <input type="radio" id="cartao" name="pagamento" value="cartao" checked>
+                                <label for="cartao" class="payment-label">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Cartão de Crédito/Débito</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="transferencia" name="pagamento" value="transferencia">
+                                <label for="transferencia" class="payment-label">
+                                    <i class="fas fa-university"></i>
+                                    <span>Transferência Bancária</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="mobile-money" name="pagamento" value="mobile-money">
+                                <label for="mobile-money" class="payment-label">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile Money (Unitel, Movicel)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Formulário de Cartão -->
+                        <div id="cartao-form" class="payment-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="numero-cartao">Número do Cartão</label>
+                                    <input type="text" id="numero-cartao" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" class="form-control" placeholder="123" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="validade">Validade</label>
+                                    <input type="text" id="validade" class="form-control" placeholder="MM/AA" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="titular">Nome do Titular</label>
+                                    <input type="text" id="titular" class="form-control" placeholder="Como no cartão">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formulário de Transferência -->
+                        <div id="transferencia-form" class="payment-form hidden">
+                            <div class="bank-info">
+                                <h5>Dados para Transferência</h5>
+                                <p><strong>Banco:</strong> Banco de Poupança e Crédito</p>
+                                <p><strong>IBAN:</strong> AO06 0004 0000 0000 0000 0000 0000</p>
+                                <p><strong>NIB:</strong> 0004 0000 0000 0000 0000 0000 0</p>
+                                <p><strong>Referência:</strong> <span id="referencia-transferencia">-</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Formulário Mobile Money -->
+                        <div id="mobile-money-form" class="payment-form hidden">
+                            <div class="form-group">
+                                <label for="numero-mobile">Número de Telefone</label>
+                                <input type="tel" id="numero-mobile" class="form-control" placeholder="+244 923 456 789">
+                            </div>
+                            <div class="form-group">
+                                <label for="operadora">Operadora</label>
+                                <select id="operadora" class="form-control">
+                                    <option value="">Selecione a operadora</option>
+                                    <option value="unitel">Unitel</option>
+                                    <option value="movicel">Movicel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resumo do Pagamento -->
+                    <div class="payment-summary">
+                        <h4><i class="fas fa-receipt"></i> Resumo do Pagamento</h4>
+                        <div class="summary-row">
+                            <span>Preço por lugar:</span>
+                            <span id="preco-unitario">0,00 Kz</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Número de lugares:</span>
+                            <span id="quantidade-lugares">0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">0,00 Kz</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Taxa de serviço:</span>
+                            <span id="taxa-servico">0,00 Kz</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span><strong>Total a Pagar:</strong></span>
+                            <span id="total-pagar"><strong>0,00 Kz</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-credit-card"></i>
+                            Pagar e Confirmar Reserva
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Euclides</h3>
+                    <p>Sistema de agendamento de viagens para Angola</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#viagens">Viagens</a></li>
+                        <li><a href="#reservas">Reservas</a></li>
+                        <li><a href="#agencias">Agências</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> +244 222 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@euclides.co.ao</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Euclides. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
