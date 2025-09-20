@@ -1,4 +1,4 @@
-# 🚌 Sistema de Agendamento de Viagens - Euclides
+# 🚌 Sistema de Agendamento de Viagens - Eurico Balaca
 
 Sistema web moderno para agendamento de viagens de autocarro em Angola, desenvolvido com Java Spring Boot e interface web responsiva.
 
@@ -238,9 +238,9 @@ Desenvolvido com ❤️ para Angola
 ## 📞 Suporte
 
 Para suporte, entre em contato:
-- Email: info@euclides.co.ao
-- Telefone: +244 222 123 456
-
+- Email: euricobalacaeury@gmail.com
+- Telefone: +244 934 505 870
 ---
 
 **Euclides** - Conectando Angola através de viagens confortáveis e seguras! 🇦🇴
+
