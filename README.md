@@ -242,6 +242,7 @@ Para suporte, entre em contato:
 - Telefone: +244 934 505 870
 ---
 
-**Euclides** - Conectando Angola através de viagens confortáveis e seguras! 🇦🇴
+**BLITZZ** - Conectando Angola através de viagens confortáveis e seguras!
+
 
 
