@@ -231,7 +231,7 @@ A interface é totalmente responsiva e funciona em:
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-## 👨‍💻 Autor
+## 👨‍💻 Autor - Eurico Balaca
 
 Desenvolvido com ❤️ para Angola
 
@@ -243,4 +243,5 @@ Para suporte, entre em contato:
 ---
 
 **Euclides** - Conectando Angola através de viagens confortáveis e seguras! 🇦🇴
+
 
